@@ -6,6 +6,7 @@ const user = require("../controller/user")
 //user
 router.post('/createUser', user.createUser)
 router.get('/getAllUsers', user.getAllUsers)
+router.delete('/deleteUserByName', user.deleteUserByName)
 
 // //admin
 // router.post('/loginAdmin', admin.loginAdmin)

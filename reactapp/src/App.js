@@ -2,6 +2,7 @@ import './App.css';
 import store from './Store/Store';
 import FirstLevel from './components/firstLevel';
 import SecondLevel from './components/secondLevel';
+import ThirdLevel from './components//thirdLevel';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import React from 'react';
@@ -20,14 +21,7 @@ import {
 function App() {
   // return (
   //   <>
-  //       <Provider store={store}>
-  //          {/* <FirstLevel/>
-  //          {/* <SecondLevel/> */}
-  //          </Provider> */}
-  //          <Router>
 
-
-  //          function App() {
   return (
     <div className="App">
       <Router>
@@ -38,20 +32,23 @@ function App() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <Link to="/" className="nav-link">first <span className="sr-only">(current)</span></Link>
+                <Link to="/" className="nav-link">firstLevel <span className="sr-only"></span></Link>
                 {/* <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a> */}
                 <h1>hii</h1>
               </li>
               <li className="nav-item active">
-                <Link to="/secondLevel" className="nav-link">SecondLevel <span className="sr-only">(current)</span></Link>
+                <Link to="/secondLevel" className="nav-link">SecondLevel <span className="sr-only"></span></Link>
+                {/* <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a> */}
+              </li>
+              <li className="nav-item active">
+                <Link to="/thirdLevel" className="nav-link">ThirdLevel <span className="sr-only"></span></Link>
                 {/* <a className="nav-link" href="#">Home <span class="sr-only">(current)</span></a> */}
               </li>
               </ul>
         
               </div>
         </nav>
-        
-        {/* <h1 style={{ "color": "grey" }}>user detalis </h1> */}
+     
         <Switch>
           <Provider store={store}>
           <Route exact path="/">
@@ -60,16 +57,10 @@ function App() {
           <Route path="/secondLevel">
             <SecondLevel></SecondLevel>
           </Route>
-         {/*  <Route path="/signUp">
-            <SignUp></SignUp>
-          </Route> 
-          {/* <Route path="/weather">
-            <Weather></Weather>
-          </Route> */}
-   
-          {/* <Route exact path="/searchesHistory/:userId">
-            <SearchesHistory />
-          </Route> */}
+          <Route path="/thirdLevel">
+            <ThirdLevel></ThirdLevel>
+          </Route>
+
         </Provider>
         </Switch>
 

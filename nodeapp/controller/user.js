@@ -11,15 +11,7 @@ const createUser = async (req, res) => {
       
       
              const newUser=await new User( req.body)
-       
-        //     console.log("dfghjnk");
-            // const newUser =await new User({
-            //     name,
-            //     password,
-            //     email,
-            //     admin: req.params.adminId
-            // })
-            // console.log("adminId" + req.params.adminId);
+   
             console.log("newUser" + newUser);
             await newUser.save();
             console.log("hello new user");
@@ -31,7 +23,7 @@ const createUser = async (req, res) => {
             // console.log(admin);
             res.status(200).json({ user: newUser })
             console.log('hi '+newUser.name);
-            // sendEmail(email)
+     
 
     }
     catch (err) {
@@ -52,4 +44,23 @@ const getAllUsers = async (req, res) => {
 
     }
 }
-module.exports={createUser,getAllUsers}
+
+
+const deleteUserByName = async (req, res) => {
+    try {
+        let UserDeleted = await User.findOne(req.body)
+        console.log(UserDeleted);
+        if (UserDeleted) {
+            await User.findOneAndDelete(req.body)
+            await user.save();
+            res.status(500).json({ message: 'delate succ', })
+        }
+        else
+            res.status(200).send('user not found')
+    }
+    catch (err) {
+        res.status(400).json({ err: err })
+
+    }
+}
+module.exports={createUser,getAllUsers,deleteUserByName}

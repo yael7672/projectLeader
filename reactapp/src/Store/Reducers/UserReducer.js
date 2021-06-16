@@ -3,14 +3,12 @@ import createReducer from './ReducerUtil';
 const initialState = {
     user: {
         _id: '',
-        name: '',
-        age: '',
-        city:"",
-        mail:"",
-        phone:""
-         // citys: [
-
-        // ]
+        name: 'name',
+        age: 'age',
+        city:"city",
+        mail:"mail",
+        phone:"phone"
+    
     }
 }
 const user = {
@@ -18,10 +16,7 @@ const user = {
         state.user.name = action.payload;
 
     },
-    //לבדוק פה האם יש צורך
-    // setId(state, action) {
-    //     state.user.id = action.payload;
-    // },
+
     setName(state, action) {
         state.user.name = action.payload;
     },

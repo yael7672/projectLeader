@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 // const Admin = require('./admin')
 const userSchema = mongoose.Schema({
  name :{type:String ,require:true},
- age:{type:String ,require:true, minlengh:6 ,maxlengh:10},
+ age:{type:String ,require:true},
  city:{type:String},
  mail:{type:String},
  phone:{type:String, minlengh:9 ,maxlengh:10},
